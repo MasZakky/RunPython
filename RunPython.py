@@ -1,5 +1,4 @@
 import os, json, sys
-import threading
 import tkinter as tk
 from tkinter import ttk, PhotoImage, filedialog
 
@@ -161,7 +160,7 @@ class Main:
                 Nama += ".py"
 
             Nama=Lokasi+Nama
-            os.system('start /b cmd /k python -u "' + Nama +'"')
+            os.system('start pythonw ' + Nama)
 
     def STARTcmd(self, event=None):
         Lokasi=self.Lokasi.get()
@@ -175,10 +174,13 @@ class Main:
                 Nama += ".py"
 
             Nama=Lokasi+Nama
-            os.system('start cmd /k python -u "' + Nama +'"')
+            os.system('start cmd /k python ' + Nama)
 
-if __name__ == '__main__':
+def main():
     try:
         Main()
     except Exception as e:
         GuiError(e)
+
+if __name__ == '__main__':
+    main()
