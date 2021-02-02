@@ -159,7 +159,7 @@ class Main:
             if Nama[-3:] not in ".py":
                 Nama += ".py"
 
-            Nama=Lokasi+Nama
+            os.chdir(Lokasi)
             os.system('start pythonw ' + Nama)
 
     def STARTcmd(self, event=None):
@@ -173,7 +173,7 @@ class Main:
             if Nama[-3:] not in ".py":
                 Nama += ".py"
 
-            Nama=Lokasi+Nama
+            os.chdir(Lokasi)
             os.system('start cmd /k python ' + Nama)
 
 def main():
